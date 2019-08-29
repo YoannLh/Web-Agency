@@ -1,0 +1,813 @@
+/*
+
+SOMMAIRE :
+ligne 51: header/en-tête;
+ligne 184: main;
+ligne 383: NOS SERVICES;
+ligne 538: NOS PROJETS;
+ligne 705: NOUS CONTACTER/footer;
+
+*/
+
+@font-face {
+    font-family: 'robotomedium';
+    src: url('font/Roboto-Medium-webfont.eot');
+    src: url('font/Roboto-Medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/Roboto-Medium-webfont.woff2') format('woff2'),
+         url('font/Roboto-Medium-webfont.woff') format('woff'),
+         url('font/Roboto-Medium-webfont.ttf') format('truetype'),
+         url('font/Roboto-Medium-webfont.svg#robotomedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'robotothin';
+    src: url('font/Roboto-Thin-webfont.eot');
+    src: url('font/Roboto-Thin-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/Roboto-Thin-webfont.woff2') format('woff2'),
+         url('font/Roboto-Thin-webfont.woff') format('woff'),
+         url('font/Roboto-Thin-webfont.ttf') format('truetype'),
+         url('font/Roboto-Thin-webfont.svg#robotothin') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+*
+{
+	font-family: 'robotomedium', sans-serif;
+}
+body
+{
+	margin: 0;
+	padding: 0;
+}
+img 
+{
+	width: 100%;
+}
+.flex
+{
+	display: flex;
+}
+header
+{
+	width: 100%;
+	height: 100px;
+	background: white;
+	border-bottom: 1px solid grey;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	z-index: 101;
+}
+.logo
+{
+	font-size: 1.1em;
+	margin-left: 9%;
+}
+@media screen and (max-width: 768px)
+{
+	.logo
+	{
+		width: auto;	
+		margin-left: 7%;
+	}
+}
+.menu
+{
+	position: relative;
+	width: 100%;
+	right: 60%;
+	height: 100px;
+	align-items: center;
+}
+@media screen and (max-width: 768px)
+{
+	.menu
+	{
+		display: none;
+	}
+}
+#burger
+{
+	display: none;
+}
+#menuRun
+{
+	position: absolute;
+	display: none;
+	top: 101px;
+	right: 0;
+	width: 35%;
+	height: 250px;
+	background: white;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: space-around;
+	font-family: 'robotomedium', sans-serif;
+	color: grey;
+	border: 1px solid grey;
+
+}
+@media screen and (max-width: 768px)
+{
+	#burger
+	{
+		display: inline-block;
+		position: absolute;
+		right: 3%;
+		color: grey;
+		font-size: 2em;
+		z-index: 1;
+	}
+	.crossBurger
+	{
+		position: absolute;
+		width: 40px;
+		right: 6.5%;
+		bottom: 275px;
+		background: white;
+		font-size: 2.5em;
+		z-index: 2;
+	}
+	#burger:hover
+	{
+		font-size: 2.5em;
+	}
+	#menuRun:target
+	{
+		display: flex;
+	}
+}
+li
+{
+	margin-right: 10%;
+	list-style-type: none;
+	font-size: 0.9em;
+}
+a
+{
+	text-decoration: none;
+	color: grey;
+}
+.li
+{
+	width: auto;
+	height: 100px;
+	align-items: center;
+	justify-content: center;
+}
+.li:hover
+{
+	border-top: 3px solid rgb(92,173,211);
+}
+@media screen and (max-width: 768px)
+{
+		.li:hover
+	{
+		border-top: 3px solid rgba(92,173,211,0);
+		border-bottom: 3px solid rgb(92,173,211);
+	}
+}
+div[title="liActive"]:defined
+{
+	border-top: 3px solid rgb(92,173,211);
+}
+@media screen and (max-width: 768px)
+{
+	div[title="liActive"]:defined
+	{
+		border-top: 3px solid rgba(92,173,211,0);
+		border-bottom: 3px solid rgba(92,173,211,1);
+	}
+}
+main
+{
+	width: auto;
+	margin: auto;
+}
+.littleGirl
+{
+	position: relative;
+	top: 70px;
+	background: url("img/bg1.jpg") no-repeat center;
+	background-size: cover;
+	width: 100%;
+	height: 80vh;
+	flex-direction: column;
+}
+@media screen and (max-width: 1024px) 
+{
+	.littleGirl
+	{
+		top: 100px;
+		height: 400px;
+	}
+}
+@media screen and (max-width: 901px) 
+{
+	.littleGirl
+	{
+		top: 100px;
+	}
+}
+@media screen and (max-width: 512px)
+{
+		.littleGirl
+	{
+		height: auto;
+		background: rgb(85,85,85);
+		text-align: center;
+	}
+}
+.leftArrow
+{
+	position: absolute;
+	left: 0;
+	top: 47%;
+	font-size: 1.5em;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	border-radius: 0 35px 35px 0;
+	padding: 10px;
+	z-index: 2;
+}
+@media screen and (max-width: 512px) 
+{
+	.leftArrow
+	{
+		display: none;
+	}
+}
+.rightArrow
+{
+	position: absolute;
+	right: 0;
+	top: 47%;
+	font-size: 1.5em;
+	color: white;
+	background: rgba(0,0,0,0.4);
+	border-radius: 35px 0 0 35px;
+	padding: 10px;
+	z-index: 2;
+}
+@media screen and (max-width: 512px) 
+{
+	.rightArrow
+	{
+		display: none;
+	}
+}
+h1
+{
+	font-size: 2.1em;
+	color: rgb(92,172,211);
+}
+.h1white
+{
+	color: white;
+}
+.h1p
+{
+	font-size: 1.1em;
+	color: white;
+	font-family: 'robotobold', sans-serif;
+}
+.text
+{
+	flex-direction: column;
+	position: relative;
+	top: 150px;
+	margin-left: 9%;
+	width: 45%;
+	color: white;
+}
+@media screen and (max-width: 1024px)
+{
+	.text
+	{
+		top: 50px;
+		margin-left: 9%;
+		width: 40%;
+
+	}
+}
+@media screen and (max-width: 901px) 
+{
+	.text
+	{
+		top: 30px;
+		margin-left: 9%;
+		width: 40%;
+	}
+}
+@media screen and (max-width: 768px) 
+{
+	.text
+	{
+		top: 30px;
+		margin-left: 9%;
+		width: 40%;
+	}
+}
+@media screen and (max-width: 512px) 
+{
+	.text
+	{
+
+		top: 10px;
+		width: 90%;
+		margin: auto;
+		align-items: center;
+	}
+}
+.button
+{
+	width: 110px;
+	height: 40px;
+	border-radius: 3px;
+	border-bottom: 2px solid rgb(0,130,211);
+	background: rgb(92,173,211);
+	color: white;
+	font-size: 1.1em;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 20px;
+}
+@media screen and (max-width: 768px) 
+{
+	.button
+	{
+		display: none;
+	}
+}
+.button:hover
+{
+	top: 21px;
+	color: black;
+	border-bottom: 1px solid rgb(0,130,211);
+}
+.blueLine
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 9%;
+	border-bottom: 4px solid rgb(92,173,211);
+	z-index: 2;
+}
+@media screen and (max-width: 512px) 
+{
+	.blueLine
+	{
+		display: none;
+	}
+}
+.greyLine
+{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	border-bottom: 4px solid rgba(0,0,0,0.2);
+	z-index: 3;
+}
+@media screen and (max-width: 512px) 
+{
+	.greyLine
+	{
+		display: none;
+	}
+}
+h2
+{
+	margin-top: 150px;
+	text-align: center;
+	font-size: 2.5em;
+}
+.line
+{
+	color: rgba(85,85,85,0.2);
+	justify-content: center;
+}
+.dotWhite
+{
+	position: relative;
+	width: 15px;
+	height: 15px;
+	top: 6px;
+	background: white;
+	padding: 3px;
+	border-radius: 15px;
+}
+.dotBlue
+{
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background: rgb(92,173,211);
+	border-radius: 15px;
+}
+.introductions
+{
+	text-align: center;
+	justify-content: center;
+	width: 50%;
+	margin: auto;
+	padding: 1%;
+	font-size: 1em;
+	font-family: 'robotobold', sans-serif;
+	color: grey;
+}
+@media screen and (max-width: 512px) 
+{
+	.introductions
+	{
+		width: 95%;
+	}
+}
+.imacSubsections
+{
+	margin: 0;
+	margin-top: 60px;
+	width: 100%;
+	height: auto;
+	justify-content: flex-end;
+}
+@media screen and (max-width: 901px) 
+{
+	.imacSubsections
+	{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 60px;
+	}
+}
+.imac
+{
+	width: 40%;
+}
+@media screen and (max-width: 901px)
+{
+	.imac
+	{
+		width: 80%;
+	}
+}
+.subsections
+{
+	margin-top: 60px;
+	width: 50%;
+	justify-content: space-between;
+}
+@media screen and (max-width: 901px)
+{
+	.subsections
+	{
+		width: 90%;
+		height: auto;
+		align-items: center;
+		justify-content: center;
+	}
+}
+.paragraph
+{
+	width: 100%;
+	height: 100px;
+	font-size: 0.9em;
+	margin-bottom: 15px;
+}
+@media screen and (max-width: 901px)
+{
+	.paragraph
+	{
+		width: 100%;
+		height: 140px;
+		margin: auto auto 30px auto;
+		text-align: justify;
+	}
+}
+h3
+{
+	margin: 0;
+}
+.icon
+{
+	position: relative;
+	font-size: 1.85em;
+	width: auto;
+	margin: 5px;
+	height: 30px;
+	justify-content: center;
+	align-items: center;
+	color: rgb(92,173,211);
+	border: 1px solid rgb(85,85,85,0.3);
+	border-radius: 31px;
+	padding: 15px;
+	z-index: 1;
+}
+.dotIcon
+{
+	position: relative;
+	font-size: 0.7em;
+	bottom: 48px;
+	left: 58px;
+	background: white;
+	color: rgba(92,173,211,1);
+	border: 1px solid white;
+	border-radius: 4px;
+	z-index: 2;
+}
+h3
+{
+	font-size: 1.2em;
+	font-family: 'robotobold', sans-serif;
+	color: black;
+}
+.txt
+{
+	width: 75%;
+	margin-left: 15px;
+	text-align: justify;
+	font-size: 1em;
+	font-family: 'robotobold', sans-serif;
+	color: grey;
+}
+.Portfolio
+{
+	align-items: center;
+	justify-content: center;
+	background: rgba(85,85,85,0.1);
+}
+#Portfolio
+{
+	background: white;
+	height: 1px;
+}
+.nothing 	/* pour ajuster ancre Portfolio */
+{
+	height: 1px;
+	background: rgba(85,85,85,0.1);
+}
+.menuPortfolio
+{
+	width: 30%;
+	margin: 40px auto 40px auto;
+	height: 50px;
+	border-radius: 4px;
+	background: rgba(85,85,85,0.3);
+	justify-content: space-around;
+}
+@media screen and (max-width: 901px)
+{
+	.menuPortfolio
+	{
+		width: 50%;
+	}
+}
+@media screen and (max-width: 768px)
+{
+	.menuPortfolio
+	{
+		width: 70%;
+	}
+}
+@media screen and (max-width: 512px)
+{
+	.menuPortfolio
+	{
+		width: 95%;
+	}
+}
+.puce
+{
+	position: relative;
+	width: 100%;
+	color: black;
+	justify-content: center;
+	align-items: center;
+}
+.arrow
+{
+	position: absolute;
+	top: 37px;
+	font-size: 1em;
+	color: rgba(0,130,211,0);
+}
+.puce:hover
+{
+	background: rgb(92,173,211);
+	color: white;
+	border-bottom: 2px solid rgb(0,130,211);
+}
+.puce:hover>.arrow
+{
+	color: rgba(0,130,211,1);
+}
+div[title="puceActive"]:defined
+{
+	background: rgb(92,173,211);
+	color: white;
+	border-radius: 4px 0px 0px 4px;
+	border-bottom: 2px solid rgb(0,130,211);
+}
+span[title="arrowActive"]:defined
+{
+	color: rgba(0,130,211,1);
+}
+.images
+{
+	width: 95%;
+	margin: auto;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.image
+{
+	width: 23%;
+	margin-top: 2%;
+	padding: 0;
+	position: relative;
+}
+@media screen and (max-width: 901px)
+{
+	.image
+	{
+		width: 33%;
+		height: auto;
+	}
+}
+@media screen and (max-width: 768px)
+{
+	.image
+	{
+		width: 50%;
+		height: auto;
+	}
+}
+@media screen and (max-width: 512px)
+{
+	.image
+	{
+		width: 100%;
+		height: auto;
+	}
+}
+.info
+{
+	position: absolute;
+	bottom: 5px;
+	width: 90.1%;
+	height: 25%; 
+	background: rgba(85,85,85,0);
+	color: rgba(255,255,255,0);
+	padding: 5%;
+	z-index: 1;
+}
+.italic
+{
+	font-style: italic;
+}
+.eye
+{
+	position: absolute;
+	bottom: 29%;
+	right: 3%;
+	font-size: 0.9em;
+	color: rgba(255,255,255,0);
+	background: rgba(92,173,211,0);
+	padding: 15px;
+	border-radius: 50%;
+	border: 1px solid rgba(255,255,255,0);
+	z-index: 2;
+}
+@media screen and (max-width: 512px)
+{
+	.eye
+	{
+		bottom: 30%;
+		font-size: 4vh;
+	}
+}
+.image:hover>.info
+{
+	background: rgba(0,0,0,0.6);
+	color: rgba(255,255,255,1);
+}
+.image:hover>.eye
+{
+	color: rgba(255,255,255,1);
+	background: rgba(92,173,211,1);
+	border: 1px solid rgba(255,255,255,1);
+}
+.Contact
+{
+	margin-top: 30px;
+	position: relative;
+	flex-direction: column;
+}
+.map
+{	
+	width: 100%;
+	height: 800px;
+	border: 0;
+	margin: 0;
+	position: absolute;
+	z-index: 1;
+}
+.mapfilter
+{
+	background: rgb(92,173,211);
+	width: 100%;
+	height: 800px;
+}
+iframe
+{
+	opacity: 0.7;
+}
+.form
+{
+	position: absolute;
+	top: 50px;
+	right: 5%;
+	display: flex;
+	flex-direction: column;
+	width: 280px;
+	height: 490px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+	padding-left: 15px;
+	background: rgba(255,255,255,0.7);
+	border-radius: 5px;
+	z-index: 3;
+}
+@media screen and (max-width: 768px)
+{
+	.form
+	{
+		position: relative;
+		top: 50px;
+		left: 0%;
+		margin: auto;
+		margin-bottom: 30px;
+		background: rgba(240,240,240,0.7);	
+	}
+}
+.contactInfo
+{
+	font-size: 1.8em;
+	font-weight: bold;
+}
+.contactInfoAdress
+{
+	font-size: 1em;
+	font-weight: normal;
+	font-family: 'robotothin', sans-serif;
+}
+.textArea
+{
+	width: 270px;
+	height: 145px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: rgba(85,85,85,0.3);
+	font-family: 'robotothin', sans-serif;
+	font-size: 0.8em;
+}
+.lineForm
+{
+	width: 270px;
+	height: 30px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: rgba(85,85,85,0.3);
+	font-family: 'robotothin', sans-serif;
+	font-size: 0.8em;
+}
+.buttonForm
+{
+	display: flex;
+	width: 100px;
+	height: 30px;
+	align-items: center;
+	justify-content: center;
+	background: rgba(92,173,211,1);
+	color: white;
+	border-radius: 3px 3px 3px 3px;
+	border-bottom: 2px solid rgb(68,148,187);
+	font-size: 0.9em;
+	font-family: 'robotobold', sans-serif;
+}
+.buttonForm:hover
+{
+	position: relative;
+	top: 1px;
+	color: black;
+	border-bottom: 1px solid rgb(0,130,211);
+}
+
+
